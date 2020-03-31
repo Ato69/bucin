@@ -115,7 +115,22 @@
       typeSpeed: 60,
       showCursor: false
     })
+      function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+<body onload="startTime()">
 
+<div id="txt"></div>
+
+</body>
     function changeTheme() {
       const word = 'Selamat ' + now.slice(0, 1).toUpperCase() + now.slice(1) + ' ' + decodeURIComponent(name)
         .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;')
